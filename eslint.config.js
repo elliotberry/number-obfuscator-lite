@@ -1,10 +1,9 @@
-import perfectionistNatural from "eslint-plugin-perfectionist/configs/recommended-natural"
+import js from "@eslint/js"
+import perfectionist from "eslint-plugin-perfectionist"
 import is from "eslint-plugin-simple-import-sort"
 import eslintPluginUnicorn from "eslint-plugin-unicorn"
-import js from "@eslint/js";
 export default [
   eslintPluginUnicorn.configs["flat/recommended"],
-  perfectionistNatural,
   js.configs.recommended,
   {
     files: ["**/*.js"],
@@ -12,7 +11,13 @@ export default [
       ecmaVersion: 2024,
       sourceType: "module"
     },
+    globals: {
+      process: false,
+      require: false,
+      console: false
+    },
     plugins: {
+      perfectionist,
       "simple-import-sort": is
     },
 
@@ -20,7 +25,7 @@ export default [
       "no-console": "off",
       "no-unused-vars": "warn",
       "perfectionist/sort-array-includes": "warn",
-      "perfectionist/sort-astro-attributes": "warn",
+
       "perfectionist/sort-classes": "warn",
       "perfectionist/sort-enums": "warn",
       "perfectionist/sort-exports": "warn",

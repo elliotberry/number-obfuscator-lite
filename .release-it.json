@@ -1,6 +1,6 @@
 {
   "git": {
-    "commitMessage": "chore: release v${version}"
+    "commitMessage": "a tedious chore: release v${version}"
   },
   "github": {
     "release": true
